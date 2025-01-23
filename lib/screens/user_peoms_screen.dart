@@ -32,7 +32,18 @@ class UserPoemsScreen extends StatelessWidget {
                   decoration: InputDecoration(
                     labelText: 'Poem Title',
                     labelStyle: TextStyle(color: Colors.white),
-                    border: OutlineInputBorder(),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(color: Colors.deepPurple[400]!),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(color: Colors.deepPurple[400]!),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(color: Colors.deepPurple[600]!),
+                    ),
                     prefixIcon: Icon(Icons.title, color: Colors.white),
                     filled: true,
                     fillColor: Colors.deepPurple[400],
@@ -45,7 +56,18 @@ class UserPoemsScreen extends StatelessWidget {
                   decoration: InputDecoration(
                     labelText: 'Poem Content',
                     labelStyle: TextStyle(color: Colors.white),
-                    border: OutlineInputBorder(),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(color: Colors.deepPurple[400]!),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(color: Colors.deepPurple[400]!),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(color: Colors.deepPurple[600]!),
+                    ),
                     prefixIcon: Icon(Icons.description, color: Colors.white),
                     filled: true,
                     fillColor: Colors.deepPurple[400],
@@ -91,7 +113,7 @@ class UserPoemsScreen extends StatelessWidget {
         stream: _firestoreService.getUserPoems(user!.uid),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
-            return Center(child: CircularProgressIndicator());
+            return Center(child: CircularProgressIndicator(color: Colors.deepPurple[600]));
           }
           final poems = snapshot.data!;
           return ListView.builder(
@@ -99,10 +121,13 @@ class UserPoemsScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               final poem = poems[index];
               return Card(
-                margin: EdgeInsets.symmetric(vertical: 10),
+                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
                 color: Colors.deepPurple[600],
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
                 child: ListTile(
-                  title: Text(poem['title'], style: TextStyle(color: Colors.white)),
+                  title: Text(poem['title'], style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                   subtitle: Text(poem['content'], style: TextStyle(color: Colors.white70)),
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,

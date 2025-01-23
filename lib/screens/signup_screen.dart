@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:peom_reciter_app/screens/home_screen.dart'; // Import HomeScreen
 import 'package:peom_reciter_app/screens/login_screen.dart';
 import 'package:peom_reciter_app/services/auth_notifier.dart';
 import 'package:provider/provider.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-
 
 class SignupScreen extends StatefulWidget {
   @override
@@ -28,10 +28,18 @@ class _SignupScreenState extends State<SignupScreen> {
           email: _emailController.text,
           password: _passwordController.text,
         );
+
+        // Notify AuthNotifier about the signup
         Provider.of<AuthNotifier>(context, listen: false).notifyListeners();
+
+        // Navigate to HomeScreen after successful signup
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => HomeScreen(user: userCredential.user!)),
+        );
       } catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Sign-up failed')),
+          SnackBar(content: Text('Sign-up failed: ${e.toString()}')),
         );
       }
 
