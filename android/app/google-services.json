@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "488832465603",
+    "project_id": "poem-reciter",
+    "storage_bucket": "poem-reciter.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488832465603:android:2e29c3b2528c7c33ce8076",
+        "android_client_info": {
+          "package_name": "com.example.poem_reciter_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkp143PscibKosGwl0-ZiYirSdkAVjkmU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488832465603:android:74362d25b4cc8282ce8076",
+        "android_client_info": {
+          "package_name": "com.example.poemreciterapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkp143PscibKosGwl0-ZiYirSdkAVjkmU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488832465603:android:ffc417ea9054ce95ce8076",
+        "android_client_info": {
+          "package_name": "com.poemreciter.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkp143PscibKosGwl0-ZiYirSdkAVjkmU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
